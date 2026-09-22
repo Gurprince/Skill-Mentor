@@ -1,0 +1,118 @@
+/* Loader Styles */
+.loader-container {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 50;
+  animation: fadeOutLoader 0.8s ease forwards;
+  animation-delay: 2s;
+}
+
+.loader-text {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes fadeOutLoader {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Fade In for Main Content */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.main-content {
+  transition: opacity 0.5s ease;
+}
+
+.progress-bar {
+  width: 0%;
+  animation: loading 2.5s ease-in-out forwards;
+}
+
+@keyframes loading {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Hero Animations */
+.animate-subtleZoom {
+  animation: subtleZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes subtleZoom {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.1); }
+}
+
+/* Shadow Effects */
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+.hover\:shadow-\[\#8C49E9\]\/50:hover {
+  box-shadow: 0 0 15px rgba(140, 73, 233, 0.5);
+}
+
+/* Focus States */
+a:focus, button:focus {
+  outline: 2px solid #8C49E9;
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroSection h1 {
+    font-size: 3rem;
+  }
+  .heroSection p {
+    font-size: 1.2rem;
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  .heroSection {
+    padding-top: 5rem;
+    text-align: center;
+  }
+  .heroSection h1 {
+    font-size: 2.5rem;
+  }
+  .heroSection p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .loader-text {
+    font-size: 3rem;
+  }
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a, button {
+  transition: all 0.3s ease;
+}
